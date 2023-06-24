@@ -1,0 +1,92 @@
+.delete_container{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 55;
+    background-color: rgba(0,0,0,.390);
+    justify-content: center;
+    top: 0;
+    opacity: 1;
+    left: 0;
+}
+.delete_container_none{
+    opacity: 0 ;
+    visibility: hidden;
+    transition-delay: 0.4s;
+    height: 0px;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.close_container{
+    opacity: 0;
+    z-index: -2;
+}
+.Delete_content_active{
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 15px #000;
+    flex-direction: column;
+    top: 100px;
+    width: 500px;
+    height: 250px;
+    z-index: 51;
+    padding: 25px 30px;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.2s ease-in-out ;
+}
+.delete_container_bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+.Delete_content_none{
+    top: -300px;
+}
+.close_menu{
+width: 100%;
+justify-content: flex-end;
+color: gray;
+font-size: 21px;
+}
+.delete_content_text{
+    color: gray;
+    font-size: 17.5px;
+    font-weight: 200;
+}
+.accses{
+    width: 100%;
+    height: 55px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.accses_delete_butt{
+    margin: 0 0 0 10px;
+    width: 80px;
+    height: 35px;
+    padding: 0;
+    border-radius: 5px;
+}
+.cancel_delete{
+    border: 1px solid rgba(0,0,0,.096);
+    font-size: 15px;
+    color:#000;}
+
+.cancel_delete:hover{
+    background-color: #f5583e;
+    color: #fff;
+}
+@media  (max-width:500px) {
+    .Delete_content_active{
+        width: 90%;
+        height: 200px;
+    }
+    .delete_content_text{
+        font-size: 15px;
+        margin: 0 20px;
+    }
+}
+

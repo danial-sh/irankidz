@@ -19,38 +19,64 @@ import Call from "./component/call";
 import Footer from "./component/footer";
 import Footerend from "./component/footer-end";
 import Shopingcard from "./component/shopingcard";
+import Notification from "./component/notifcation";
+import Delete from "./component/shopingcard/Delete";
 function App() {
+  const [notife, setnotife] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      if (notife === true) {
+        setnotife(false);
+      }
+    }, 4000);
+  }, [notife]);
   const [productlist, setproductlist] = useState(false);
+  const [notifetext, setnotfietext] = useState("");
+  const [ceiling, setceiling] = useState(true);
   const [prices, setprices] = useState([]);
   const [data, setdata] = useState([]);
-  const [succes, setsucces] = useState();
   const close_list = () => {
     setproductlist(false);
   };
   const productbuylist = (event, v, index, myData) => {
     setproductlist(true);
+    console.log(notifetext);
     if (!data.some((item) => v.id === item.id)) {
+      setnotfietext(v.name);
+      setnotife(true);
+      setceiling(true);
       setdata((e) => [...e, v]);
       setprices((e) => [...e, v.number]);
-    } else {
+    } else if ((notifetext == v.name, notife == false)) {
+      setnotife(true);
+      setceiling(false);
+      setnotfietext("سقف خرید این محصول 1 تعداد میباشد");
     }
     myData = v;
   };
   const productbuylistshow = (event) => {
     setproductlist(true);
   };
-
+  const close_notfication = (e) => {
+    setnotife(false);
+  };
   const productaction = (event, v, i) => {
-    setdata(
-      data.map((value, i) => {
-        if (v.settingaction == false) {
-          v.settingaction = true;
-        } else {
-          v.settingaction = false;
-        }
-        return value;
-      })
-    );
+    const arr = [...data];
+    arr[i].settingaction = !arr[i].settingaction;
+    setdata(arr);
+  };
+  const product_delete = (v, i) => {
+    const arr = [...data];
+    arr[i].delete_menu = !arr[i].delete_menu;
+    setdata(arr);
+  };
+  const close_delete_menu = (v, i) => {
+    const arr = [...data];
+    arr[i].delete_menu = !arr[i].delete_menu;
+    setdata(arr);
+  };
+  const accept_delete_product = (v, i) => {
+    setdata(data.filter((item, index) => item.id != v.id));
   };
   return (
     <div className="App">
@@ -93,6 +119,16 @@ function App() {
             ? prices.reduce((num, total) => num + total).toLocaleString()
             : 0
         }
+        delete_product={(v, i) => product_delete(v, i)}
+        // delete component
+        close_delete_menu={(e, v, i) => close_delete_menu(e, v, i)}
+        accept_delete_product={(e, v, i) => accept_delete_product(e, v, i)}
+      />
+      <Notification
+        notifetext={notife}
+        purchase={notifetext}
+        ceiling={ceiling}
+        close_notfication={(e, v, i) => close_notfication(e, v, i)}
       />
     </div>
   );

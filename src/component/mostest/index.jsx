@@ -16,6 +16,7 @@ export default function Most({ productbuylist }) {
           id: "index-40",
           number: 670000,
           class: "most-butt product-butt",
+          settingaction: false,
           text: "افزودن به سبد خرید",
           dropdown: [
             { icon: AiOutlineHeart, text: "علاقه مندیها" },
@@ -33,6 +34,7 @@ export default function Most({ productbuylist }) {
           name: "عروسک دیزنی وودی مدل Woody Talking اورجینال",
           title: "عروسک دیزنی وودی مدل Woody Talking اورجینال",
           price: " تومان",
+          settingaction: false,
           id: "index-41",
           number: 2400000,
           class: "most-butt product-butt",
@@ -54,6 +56,7 @@ export default function Most({ productbuylist }) {
           title: "اسب بولسای داستان اسباب بازی ها پولیشی",
           price: " تومان",
           id: "index-42",
+          settingaction: false,
           number: 1916000,
           class: "most-butt product-butt",
           text: "افزودن به سبد خرید",
@@ -79,6 +82,7 @@ export default function Most({ productbuylist }) {
           title: "پیراهن و شلوار به همراه جلیقه پسرانه",
           price: " تومان",
           id: "index-43",
+          settingaction: false,
           number: 2500000,
           class: "most-butt product-butt",
           text: "افزودن به سبد خرید",
@@ -98,6 +102,7 @@ export default function Most({ productbuylist }) {
           name: "ست پیراهن و شلوار پسرانه",
           title: "ست پیراهن و شلوار پسرانه",
           price: " تومان",
+          settingaction: false,
           id: "index-44",
           number: 2500000,
           class: "most-butt product-butt",
@@ -119,6 +124,7 @@ export default function Most({ productbuylist }) {
           title: "لگو مزرعه قرمز 799 تکه کودک",
           price: "تومان",
           number: 5200000,
+          settingaction: false,
           id: "index-45",
           class: "most-butt product-butt",
           text: "افزودن به سبد خرید",
@@ -148,6 +154,7 @@ export default function Most({ productbuylist }) {
           number: 2500000,
           id: "index-37",
           class: "most-butt product-butt",
+          settingaction: false,
           text: "افزودن به سبد خرید",
           dropdown: [
             { icon: AiOutlineHeart, text: "علاقه مندیها" },
@@ -165,6 +172,7 @@ export default function Most({ productbuylist }) {
           name: "ست پیراهن و شلوار پسرانه",
           title: "ست پیراهن و شلوار پسرانه",
           price: " تومان",
+          settingaction: false,
           number: 2500000,
           id: "index-38",
           class: "most-butt product-butt",
@@ -186,6 +194,7 @@ export default function Most({ productbuylist }) {
           title: "لگو مزرعه قرمز 799 تکه کودک",
           price: " تومان",
           id: "index-39",
+          settingaction: false,
           number: 5200000,
           class: "most-butt product-butt",
           text: "افزودن به سبد خرید",
@@ -211,7 +220,7 @@ export default function Most({ productbuylist }) {
   const handleclose = () => {
     setshowmodal(false);
   };
-  const [name, setname] = useState(true);
+
   return (
     <div className="margin-couple the-most d-flex">
       <Quick_view

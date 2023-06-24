@@ -1,0 +1,51 @@
+.notification_contain{
+    position: fixed;
+    top: 20%;
+    left: 0%;
+ 
+    width: 100%;
+    z-index: 5;
+    margin: 0 auto;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.notification{
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    padding: 13px;
+    color: #fff;
+    background-color: rgba(0,0,0,.39);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px #fff;
+}
+.notifnone{
+    width: 0px;
+    border: 3px solid #000;
+    visibility: hidden;
+    opacity: 0.3;
+}
+.closebtn{
+    position: absolute;
+    left: 0px;
+    top: 0%;
+    width:26px;
+    height: 26px;
+    background-color: red;
+}
+.notifcation_text{
+    height: 100%;
+    padding: 5px 0 0 0;
+    font-size: 15px;
+}
+.notifcation_text_para_show{
+    transition-delay: 0.4s;
+}
+.notifcation_text_para_none{
+    opacity: 0;
+    animation-delay: 0;
+}
+

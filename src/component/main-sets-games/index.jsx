@@ -13,6 +13,7 @@ export default function Games({ productbuylist }) {
       number: 1500000,
       cimg: "cloth-img cimg",
       name: "بازی Resident Evil 8 : Village مخصوص PS5",
+      settingaction: false,
       cname: "cname",
       id: "index-25",
       cprice: "cprice",
@@ -30,6 +31,7 @@ export default function Games({ productbuylist }) {
       price: "تومان",
       number: 1500000,
       cimg: "cloth-img cimg",
+      settingaction: false,
       name: "بازی Horizon Forbidden West مخصوص PS5",
       cname: "cname",
       cprice: "cprice",
@@ -48,6 +50,7 @@ export default function Games({ productbuylist }) {
       price: " تومان",
       number: 2292000,
       cimg: "cloth-img cimg",
+      settingaction: false,
       name: "بازی فیفا 23 مخصوص PS5",
       cname: "cname",
       id: "index-27",
@@ -65,6 +68,7 @@ export default function Games({ productbuylist }) {
       img: "games-4",
       price: " تومان",
       number: 1740000,
+      settingaction: false,
       id: "index-28",
       cimg: "cloth-img cimg",
       name: "بازی Call of Duty: Vanguard مخصوص PS5",
@@ -84,6 +88,7 @@ export default function Games({ productbuylist }) {
       price: " تومان",
       number: 1675000,
       cimg: "cloth-img cimg ",
+      settingaction: false,
       id: "index-29",
       name: "بازی Stray مخصوص PS5",
       cname: "cname",
@@ -101,7 +106,6 @@ export default function Games({ productbuylist }) {
   const [showModal, setShowModal] = useState(false);
   const handleaction = (item, index, v, i) => {
     let num = new Number(v.number);
-    console.log(num);
     setMyData(v);
     setShowModal(true);
   };

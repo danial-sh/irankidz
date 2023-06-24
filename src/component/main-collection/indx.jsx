@@ -14,7 +14,11 @@ export default function Colection() {
         <div className="collection-begin-img">
           <img src="/images/collection-begin.webp" alt="qwe" />
         </div>
-        <Button title={"شروع به خرید"} text={"شروع به خرید"} />
+        <Button
+          title={"شروع به خرید"}
+          text={"شروع به خرید"}
+          action={() => ""}
+        />
       </div>
       <div className="collection-category d-flex">
         <Categorymap data={info} />

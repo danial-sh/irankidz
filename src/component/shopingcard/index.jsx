@@ -2,6 +2,7 @@ import React from "react";
 import { AiOutlineSetting, AiOutlineClose } from "react-icons/ai";
 import { BiTrashAlt } from "react-icons/bi";
 import Button from "../button";
+import Delete from "./Delete";
 export default function Shopingcard({
   data,
   activated,
@@ -10,7 +11,10 @@ export default function Shopingcard({
   productaction,
   product_count,
   close,
-  setting_active,
+  delete_product,
+  accept_delete_product,
+  close_delete_menu,
+  Delete_action,
 }) {
   return (
     <div
@@ -49,9 +53,7 @@ export default function Shopingcard({
                   />
                   <div
                     className="product-setting d-flex cursor model"
-                    onClick={(event) => {
-                      productaction(event, v, i);
-                    }}>
+                    onClick={(event) => productaction(event, v, i)}>
                     {v.settingaction ? (
                       <AiOutlineClose />
                     ) : (
@@ -65,8 +67,8 @@ export default function Shopingcard({
                     className={"product-setting-option-active d-flex model"}
                     style={
                       v.settingaction
-                        ? { right: "47%", zIndex: -1 }
-                        : { right: "0", zIndex: -1 }
+                        ? { right: "47%", zIndex: -2 }
+                        : { right: "0", zIndex: -2 }
                     }>
                     <input
                       type="text"
@@ -75,14 +77,21 @@ export default function Shopingcard({
                       defaultValue={product_count}
                     />
                     <div className="product-setting-remove-and-view d-flex">
-                      <div className="product-setting-view">
+                      <div className="product-setting-view cursor model">
                         <AiOutlineSetting />
                       </div>
-                      <div className="product-setting-remove">
+                      <div
+                        className="product-setting-remove cursor"
+                        onClick={() => delete_product(v, i)}>
                         <BiTrashAlt />
                       </div>
                     </div>
                   </div>
+                  <Delete
+                    delete_menu={v.delete_menu}
+                    close_menu={(e) => close_delete_menu(v, i)}
+                    accept_delete_product={(e) => accept_delete_product(v, i)}
+                  />
                 </div>
               );
             })}

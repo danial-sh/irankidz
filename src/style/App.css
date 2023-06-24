@@ -59,6 +59,24 @@ input {
 .cursor {
   cursor: pointer;
 }
+/* button-S */
+.about-start {
+  color: #fff;
+  padding: 5px 27px;
+  width: fit-content;
+  height: fit-content;
+  background-color: #f5583e;
+  border: 1px solid #fcceba;
+  border-radius: 8px;
+  margin: 0 15px 15px 0;
+  z-index: 1;
+  font-size: 16px;
+}
+.about-start:hover {
+  background-color: #000;
+  border-color: #000;
+}
+/* button-E */
 /* buy-box S */
 .buy-box {
   position: fixed;
@@ -454,24 +472,6 @@ input {
   z-index: 0;
   height: 100%;
 }
-/* button- S */
-.about-start {
-  color: #fff;
-  padding: 5px 27px;
-  width: fit-content;
-  height: fit-content;
-  background-color: #f5583e;
-  border: 1px solid #fcceba;
-  border-radius: 8px;
-  margin: 0 15px 15px 0;
-  z-index: 1;
-  font-size: 16px;
-}
-.about-start:hover {
-  background-color: #000;
-  border-color: #000;
-}
-/* button E */
 .collection-category {
   width: 20%;
   flex-direction: column;
@@ -1458,7 +1458,7 @@ color: #000;
   justify-content: center;
   align-items: center;
   right: 10px;
-  z-index: 13;
+  z-index: 0;
   font-size: 22px;
   background-color: #fff;
   color:gray;
@@ -1498,9 +1498,12 @@ color: #000;
   margin:0 15px ;
   position: relative;
   border:  1px solid rgba(0, 0, 0, 0.096);
+
+  z-index: 1;
 }
 .shoping-cards>img{
   width: 98px;
+  background-color:#fff;
 }
 .product-setting{
   width: 25px;
@@ -1535,6 +1538,7 @@ color: #000;
   justify-content: space-between;
   position: absolute;
   height: 100%;
+  z-index: -1;
 }
 .product-setting-option-active>input{
   width: 90%;
@@ -1548,6 +1552,9 @@ color: #000;
 }
 .product-setting-remove-and-view{
   justify-content: space-around;
+}
+.product-setting-view:hover{
+  color: #f45a3e;
 }
 .product-setting-remove{
   color: red;
@@ -1833,6 +1840,9 @@ margin: 10px 0;
     margin-bottom: 20px;
   }
   .buy-box {
+    display: none;
+  }
+  .shoping-card-show{
     display: none;
   }
 }

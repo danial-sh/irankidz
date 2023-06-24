@@ -12,6 +12,7 @@ export default function Latestproducts({ productbuylist }) {
       number: 1675000,
       class: "product-butt",
       id: "index-9",
+      settingaction: false,
       text: "افزودن به سبد خرید",
       extra: "",
       dropdown: [
@@ -25,7 +26,8 @@ export default function Latestproducts({ productbuylist }) {
       name: "ست سرهمی نوزادی سه تکه",
       title: "ست سرهمی نوزادی سه تکه",
       price: " تومان",
-      id: "index-2",
+      id: "index-46",
+      settingaction: false,
       number: 2900000,
       class: "product-butt",
       text: "افزودن به سبد خرید",
@@ -41,6 +43,7 @@ export default function Latestproducts({ productbuylist }) {
       title: "کفش دخترانه قرمز برند پوما",
       price: " تومان",
       id: "index-10",
+      settingaction: false,
       number: 4500000,
       class: "product-butt",
       text: "افزودن به سبد خرید",
@@ -56,6 +59,7 @@ export default function Latestproducts({ productbuylist }) {
       title: "کفش کتونی مدل پوما",
       price: " تومان",
       number: 2700000,
+      settingaction: false,
       id: "index-11",
       class: "product-butt",
       text: "افزودن به سبد خرید",
@@ -72,6 +76,7 @@ export default function Latestproducts({ productbuylist }) {
       price: " تومان",
       id: "index-12",
       number: 1900000,
+      settingaction: false,
       class: "product-butt",
       text: "افزودن به سبد خرید",
       dropdown: [
@@ -88,6 +93,7 @@ export default function Latestproducts({ productbuylist }) {
       id: "index-13",
       number: 2500000,
       class: "product-butt",
+      settingaction: false,
       text: "افزودن به سبد خرید",
       dropdown: [
         { icon: AiOutlineHeart, text: "علاقه مندیها" },
@@ -101,6 +107,7 @@ export default function Latestproducts({ productbuylist }) {
       title: "شلوار جین دمپا گشاد دخترانه برند زارا",
       price: " تومان",
       number: 2100000,
+      settingaction: false,
       id: "index-14",
       class: "product-butt",
       text: "افزودن به سبد خرید",
@@ -118,6 +125,7 @@ export default function Latestproducts({ productbuylist }) {
       id: "index-15",
       number: 2100000,
       class: "product-butt",
+      settingaction: false,
       text: "افزودن به سبد خرید",
       dropdown: [
         { icon: AiOutlineHeart, text: "علاقه مندیها" },
@@ -132,6 +140,7 @@ export default function Latestproducts({ productbuylist }) {
       price: " تومان",
       number: 2100000,
       id: "index-16",
+      settingaction: false,
       class: "product-butt",
       text: "افزودن به سبد خرید",
       dropdown: [
