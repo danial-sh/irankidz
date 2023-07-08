@@ -22,116 +22,132 @@ import Shopingcard from "./component/shopingcard";
 import Notification from "./component/notifcation";
 import Delete from "./component/shopingcard/Delete";
 function App() {
-  const [notife, setnotife] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      if (notife === true) {
-        setnotife(false);
-      }
-    }, 4000);
-  }, [notife]);
-  const [productlist, setproductlist] = useState(false);
-  const [notifetext, setnotfietext] = useState("");
-  const [ceiling, setceiling] = useState(true);
-  const [prices, setprices] = useState([]);
-  const [data, setdata] = useState([]);
-  const close_list = () => {
-    setproductlist(false);
-  };
-  const productbuylist = (event, v, index, myData) => {
-    setproductlist(true);
-    console.log(notifetext);
-    if (!data.some((item) => v.id === item.id)) {
-      setnotfietext(v.name);
-      setnotife(true);
-      setceiling(true);
-      setdata((e) => [...e, v]);
-      setprices((e) => [...e, v.number]);
-    } else if ((notifetext == v.name, notife == false)) {
-      setnotife(true);
-      setceiling(false);
-      setnotfietext("سقف خرید این محصول 1 تعداد میباشد");
-    }
-    myData = v;
-  };
-  const productbuylistshow = (event) => {
-    setproductlist(true);
-  };
-  const close_notfication = (e) => {
-    setnotife(false);
-  };
-  const productaction = (event, v, i) => {
-    const arr = [...data];
-    arr[i].settingaction = !arr[i].settingaction;
-    setdata(arr);
-  };
-  const product_delete = (v, i) => {
-    const arr = [...data];
-    arr[i].delete_menu = !arr[i].delete_menu;
-    setdata(arr);
-  };
-  const close_delete_menu = (v, i) => {
-    const arr = [...data];
-    arr[i].delete_menu = !arr[i].delete_menu;
-    setdata(arr);
-  };
-  const accept_delete_product = (v, i) => {
-    setdata(data.filter((item, index) => item.id != v.id));
-  };
-  return (
-    <div className="App">
-      <Buyerbox
-        productbuylistshow={productbuylistshow}
-        productcount={data.length}
-      />
-      <Header />
-      <Space />
-      <Navbar />
-      <Colection />
-      <Services />
-      <Categoryslider />
-      <Dollandcar />
-      <Newestirankidz
-        productbuylist={(event, v, i) => productbuylist(event, v, i)}
-      />
-      <Latestproducts
-        productbuylist={(event, v, i) => productbuylist(event, v, i)}
-      />
-      <Clothsets
-        productbuylist={(event, v, i) => productbuylist(event, v, i)}
-      />
-      <Toysset productbuylist={(event, v, i) => productbuylist(event, v, i)} />
-      <Games productbuylist={(event, v, i) => productbuylist(event, v, i)} />
-      <Companys />
-      <Most productbuylist={(event, v, i) => productbuylist(event, v, i)} />
-      <Call />
-      <Footer />
-      <Footerend />
-      <Shopingcard
-        productaction={(event, v, i) => productaction(event, v, i)}
-        data={data}
-        activated={productlist}
-        close={close_list}
-        exsist={data.length > 0 ? true : false}
-        product_count={1}
-        price_count={
-          data.length > 0
-            ? prices.reduce((num, total) => num + total).toLocaleString()
-            : 0
-        }
-        delete_product={(v, i) => product_delete(v, i)}
-        // delete component
-        close_delete_menu={(e, v, i) => close_delete_menu(e, v, i)}
-        accept_delete_product={(e, v, i) => accept_delete_product(e, v, i)}
-      />
-      <Notification
-        notifetext={notife}
-        purchase={notifetext}
-        ceiling={ceiling}
-        close_notfication={(e, v, i) => close_notfication(e, v, i)}
-      />
-    </div>
-  );
+	const [productlist, setproductlist] = useState(false);
+	const [notifetext, setnotfietext] = useState("");
+	const [ceiling, setceiling] = useState(true);
+	const [data, setdata] = useState([]);
+	const [notife, setnotife] = useState(false);
+	const close_list = () => {
+		setproductlist(false);
+	};
+	const price = data.reduce((prev, cur, ind, arr) => prev + cur.number, 0);
+	const productbuylist = (event, v, index, myData) => {
+		setproductlist(true);
+		if (!data.some(item => v.id === item.id)) {
+			setnotfietext(v.name);
+			setnotife(true);
+			setceiling(true);
+			setdata(e => [...e, v]);
+		} else if ((notifetext == v.name, notife == false)) {
+			setnotife(true);
+			setceiling(false);
+			setnotfietext("سقف خرید این محصول 1 تعداد میباشد");
+		}
+	};
+	const productbuylistshow = event => {
+		setproductlist(true);
+	};
+	const close_notfication = e => {
+		setnotife(false);
+		console.log("h");
+	};
+	const productaction = (event, v, i) => {
+		const arr = [...data];
+		arr[i].settingaction = !arr[i].settingaction;
+		setdata(arr);
+	};
+	const product_delete = (v, i) => {
+		const arr = [...data];
+		arr[i].delete_menu = !arr[i].delete_menu;
+		setdata(arr);
+	};
+	const close_delete_menu = (v, i) => {
+		const arr = [...data];
+		arr[i].delete_menu = !arr[i].delete_menu;
+		setdata(arr);
+	};
+	const accept_delete_product = (v, i) => {
+		setdata(data.filter((item, index) => item.id !== v.id));
+		data.reduce((prev, curr, ind, arr) => prev.number - curr, 0);
+	};
+	// useEffect(() => {
+	// 	return () => {
+	// 		setTimeout(() => {
+	// 			close_notfication();
+	// 		}, 3500);
+	// 	};
+	// }, []);
+	return (
+		<div className='App'>
+			<Buyerbox
+				productbuylistshow={productbuylistshow}
+				productcount={data.length}
+			/>
+			<Header />
+			<Space />
+			<Navbar />
+			<Colection />
+			<Services />
+			<Categoryslider />
+			<Dollandcar />
+			<Newestirankidz
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Latestproducts
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Clothsets
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Toysset
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Games
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Companys />
+			<Most
+				productbuylist={(event, v, i) =>
+					productbuylist(event, v, i)
+				}
+			/>
+			<Call />
+			<Footer />
+			<Footerend />
+			<Shopingcard
+				productaction={(event, v, i) => productaction(event, v, i)}
+				data={data}
+				activated={productlist}
+				close={close_list}
+				exsist={data.length > 0 ? true : false}
+				product_count={1}
+				price_count={price.toLocaleString()}
+				delete_product={(v, i) => product_delete(v, i)}
+				// delete component
+				close_delete_menu={(e, v, i) => close_delete_menu(e, v, i)}
+				accept_delete_product={(e, v, i) =>
+					accept_delete_product(e, v, i)
+				}
+			/>
+			<Notification
+				notifetext={notife}
+				purchase={notifetext}
+				ceiling={ceiling}
+				closemodal={notife}
+				close_notfication={(e, v, i) => close_notfication(e, v, i)}
+				setclosemodal={data}
+			/>
+		</div>
+	);
 }
-
 export default App;

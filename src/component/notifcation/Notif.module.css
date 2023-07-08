@@ -42,7 +42,7 @@
     font-size: 15px;
 }
 .notifcation_text_para_show{
-    transition-delay: 0.4s;
+    transition-delay: 0.3s;
 }
 .notifcation_text_para_none{
     opacity: 0;
