@@ -145,7 +145,7 @@ function App() {
 				ceiling={ceiling}
 				closemodal={notife}
 				close_notfication={(e, v, i) => close_notfication(e, v, i)}
-				setclosemodal={data}
+				setclosemodal={notife}
 			/>
 		</div>
 	);
